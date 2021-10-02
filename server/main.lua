@@ -45,8 +45,8 @@ RegisterNetEvent('qb-garbagejob:server:nano')
 AddEventHandler('qb-garbagejob:server:nano', function()
     local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
 
-	xPlayer.Functions.AddItem("cryptostick", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], "add")
+	xPlayer.Functions.AddItem("hydrochloricacid", 1, false)
+	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["hydrochloricacid"], "add")
 end)
 
 RegisterServerEvent('qb-garbagejob:server:PayShit')

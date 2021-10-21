@@ -60,7 +60,7 @@ AddEventHandler('qb-garbagejob:server:PayShit', function(amount, location)
         if location == #Config.Locations["trashcan"] then
             for i = 1, math.random(3, 5), 1 do
                 local item = Materials[math.random(1, #Materials)]
-                Player.Functions.AddItem(item, math.random(4, 7))
+                Player.Functions.AddItem(item, math.random(1, 2))
                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
                 Citizen.Wait(500)
             end

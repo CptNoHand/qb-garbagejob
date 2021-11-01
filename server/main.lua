@@ -57,9 +57,9 @@ QBCore.Functions.CreateCallback("garbagejob:server:NextStop", function(source, c
     local newBagAmount = 0
 
     if(math.random(100) >= Config.CryptoStickChance) and Config.GiveCryptoStick then
-        Player.Functions.AddItem("cryptostick", 1, false)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["cryptostick"], 'add')
-        TriggerClientEvent('QBCore:Notify', source, "You found a cryptostick on the floor")
+        Player.Functions.AddItem("hydrochloricacid", 1, false)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["hydrochloricacid"], 'add')
+        TriggerClientEvent('QBCore:Notify', source, "You found...Hydrochloricacid?")
     end
 
     if distance <= 10 then
@@ -87,24 +87,6 @@ QBCore.Functions.CreateCallback("garbagejob:server:NextStop", function(source, c
     cb(shouldContinue,newStop,newBagAmount)
 end)
 
-local Materials = {
-    "metalscrap",
-    "plastic",
-    "copper",
-    "iron",
-    "aluminum",
-    "steel",
-    "glass",
-}
-
-RegisterNetEvent('qb-garbagejob:server:nano')
-AddEventHandler('qb-garbagejob:server:nano', function()
-    local xPlayer = QBCore.Functions.GetPlayer(tonumber(source))
-
-	xPlayer.Functions.AddItem("hydrochloricacid", 1, false)
-	TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["hydrochloricacid"], "add")
-end)
-
 QBCore.Functions.CreateCallback('garbagejob:server:EndShift', function(source, cb, location)
     local Player = QBCore.Functions.GetPlayer(source)
     local CitizenId = Player.PlayerData.citizenid
@@ -122,7 +104,6 @@ QBCore.Functions.CreateCallback('garbagejob:server:EndShift', function(source, c
     end
 end)
 
-
 RegisterServerEvent('garbagejob:server:PayShift')
 AddEventHandler('garbagejob:server:PayShift', function()
     local src = source
@@ -138,13 +119,6 @@ AddEventHandler('garbagejob:server:PayShift', function()
             TriggerClientEvent('QBCore:Notify', src, "Due to early finish (Completed: "..Routes[CitizenId].stopsCompleted .." Total: "..Routes[CitizenId].totalNumberOfStops.."), your deposit will not be returned.", "error")
         end
 
-        if location == #Config.Locations["trashcan"] then
-            for i = 1, math.random(3, 5), 1 do
-                local item = Materials[math.random(1, #Materials)]
-                Player.Functions.AddItem(item, math.random(1, 2))
-                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
-                Citizen.Wait(500)
-            end
         local totalToPay = depositPay + Routes[CitizenId].actualPay
         local payoutDeposit = "(+ $"..depositPay.." deposit)"
         if depositPay == 0 then

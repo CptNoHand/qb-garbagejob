@@ -13,16 +13,16 @@ Config.CryptoStickChance = 95
 Config.MinStops = 5
 
 -- Upper worth per bag
-Config.BagUpperWorth = 100
+Config.BagUpperWorth = 8
 
 -- Lower worth per bag
-Config.BagLowerWorth = 50
+Config.BagLowerWorth = 4
 
 -- Minimum bags per stop
 Config.MinBagsPerStop = 2
 
 -- Maximum bags per stop
-Config.MaxBagsPerStop = 5
+Config.MaxBagsPerStop = 6
 
 -- WIP: Do not use
 -- If you want to use custom routes instead of random amount of stops stops set to true

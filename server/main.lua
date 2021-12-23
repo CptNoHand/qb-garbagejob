@@ -55,9 +55,9 @@ QBCore.Functions.CreateCallback("garbagejob:server:NextStop", function(source, c
     local newBagAmount = 0
 
     if(math.random(100) >= Config.CryptoStickChance) and Config.GiveCryptoStick then
-        Player.Functions.AddItem("hydrochloricacid", 1, false)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["hydrochloricacid"], 'add')
-        TriggerClientEvent('QBCore:Notify', source, "You found...Hydrochloricacid?")
+        Player.Functions.AddItem("lithium", 1, false)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["lithium"], 'add')
+        TriggerClientEvent('QBCore:Notify', source, "You found...lithium?")
     end
 
     if distance <= 10 then

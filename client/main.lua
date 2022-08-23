@@ -362,7 +362,7 @@ CreateThread(function()
                                         garbageVehicle = veh
                                         SetVehicleNumberPlateText(veh, "GARB"..tostring(math.random(1000, 9999)))
                                         SetEntityHeading(veh, coords.w)
-                                        exports['cc-fuel']:SetFuel(veh, 100.0)
+                                        exports['LegacyFuel']:SetFuel(veh, 100.0)
                                         SetEntityAsMissionEntity(veh, true, true)
                                         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
                                         currentStop = firstStop

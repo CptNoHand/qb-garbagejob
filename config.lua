@@ -7,7 +7,8 @@ Config.TruckPrice = 250
 Config.GiveCryptoStick = true
 
 -- Has to roll this number or higher to receive a cryptostick
-Config.CryptoStickChance = 96
+Config.CryptoStickChance = 98
+Config.LithiumChance = 95
 
 -- How many stops minimum should the job roll?
 Config.MinStops = 5

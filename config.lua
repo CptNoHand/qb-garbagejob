@@ -3,7 +3,7 @@ Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 -- Price taken and given back when delivered a truck
-Config.TruckPrice = 250
+Config.TruckPrice = 10
 
 -- Want to give out a cryptostick per stop?
 Config.GiveCryptoStick = true
